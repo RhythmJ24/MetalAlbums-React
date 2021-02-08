@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import { albums } from '../../mock_data/albums';
 
 class App extends Component{
   
-  state = {
-    album_name: '',
-    owned_by: '',
-    release_year: '',
-    album_url: '',
-    more_info: '',
-    submitted_by: 'Rhythm',
-    vote: 1,
+  state = { 
+    new:{
+      album_name: '',
+      owned_by: '',
+      release_year: '',
+      album_url: '',
+      more_info: '',
+      submitted_by: 'Rhythm',
+      vote: 1 },
+    total : albums,
   }
   render(){
     return(
