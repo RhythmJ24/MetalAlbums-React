@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { albums } from '../../mock_data/albums';
+import { AddNew } from '../views/add/addItem';
 import { ListView } from '../views/list/itemList';
 
 class App extends Component{
@@ -38,30 +39,9 @@ class App extends Component{
             albums={this.state.total}
             handleVote={(index) => this.handleVote(index)}
           />
-        <div>
-          <p className="add-new">Add New</p>
-          <form>
-            <div>
-            <input className="input" type="text" name="album_name" placeholder="Album Name" />
-            </div>
-             <div>
-             <input className="input" type="text" name="owned_by" placeholder="Band Name" />
-             </div>
-             <div>
-             <input className="input" type="text" name="release_year" placeholder="Release Year" />
-             </div>
-             <div>
-             <input className="input" type="text" name="album_url" placeholder="Album Cover URL" />
-             </div>
-            <input className="input" type="text" name="more_info" placeholder="More Info URL" />
-            <div>
-              <select className="select" name="submitted_by" placeholder="Submitted by">
-                <option>Rhythm</option>
-                <option>Maxx</option>
-              </select>
-            </div>
-          </form>
-        </div>
+
+          <AddNew />
+        
       </div>
     );
   }
