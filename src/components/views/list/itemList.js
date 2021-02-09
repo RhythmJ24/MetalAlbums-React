@@ -12,6 +12,7 @@ const ListView = (props) => {
 
   return albums.length ? (
     albums
+    .sort((x, y) => y.vote - x.vote)
     .map((each, index) => (
       <div key={index} className="album">
           <Image 
