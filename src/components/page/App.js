@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { albums } from '../../mock_data/albums';
-import { ListView } from '../views/itemList';
+import { ListView } from '../views/list/itemList';
 
 class App extends Component{
   
@@ -15,11 +15,29 @@ class App extends Component{
       vote: 1 },
     total : albums,
   }
+    
+  handleVote = (index) => {
+    this.setState((current) => {
+      let final = [...current.total];
+      let updateItem = {...final[index]};
+      final[index] = {...updateItem, vote: ++updateItem.vote};
+
+      return {
+        new: current.new,
+        total: final,
+      };
+    });
+  };
+
+
   render(){
     return(
       <div className="wrapper">
         <p className="heading">Popular Metal ALbums</p>
-          <ListView />
+          <ListView 
+            albums={this.state.total}
+            handleVote={(index) => this.handleVote(index)}
+          />
         <div>
           <p className="add-new">Add New</p>
           <form>
@@ -45,7 +63,7 @@ class App extends Component{
           </form>
         </div>
       </div>
-    )
+    );
   }
 }
 
