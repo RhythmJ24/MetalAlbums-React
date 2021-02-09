@@ -3,11 +3,12 @@ import {Image} from '../../elements/Image/image';
 import {users} from '../../../mock_data/users';
 
 const ListView = (props) => {
-  const {albums, handleVote} = props;
+  const {albums, handleVote, removeItem} = props;
 
   const selectProfile = (name) => {
-    return users.find((user) => user.name == name).avatar;
-  };
+    console.log(name,'=====')
+      return users.find((user) => user.name === name).avatar;
+    };
 
   return albums.length ? (
     albums
@@ -37,6 +38,9 @@ const ListView = (props) => {
             />
             </div>
           </div>
+          <button className="remove" onClick={() => removeItem(index)}>
+            Delete
+          </button>
         </div>
     ))
   ) : (
