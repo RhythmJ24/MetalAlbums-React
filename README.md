@@ -1,3 +1,4 @@
+### Link: https://popular-metal-albums.netlify.app/
 ## To install dependencies
 
 ```
@@ -14,7 +15,7 @@ npm start
 
 ## Instructions
 
-## Product List
+### Product List
 
 The app displays a list of products these fields:
 * a vote count
@@ -28,7 +29,7 @@ The app displays a list of products these fields:
 * The "submitted by" user list is static. There is no need to add new users. Provide at least 3 users in the list.
 * The "submitted by" user should be represented by an avatar image.
 
-## Input form
+### Input form
 
 * Add the ability to add a new item to the list by filling and submitting a form.
 * All fields are required except image URL.
